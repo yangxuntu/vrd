@@ -7,10 +7,10 @@ from model.config import cfg
 from model.ass_fun import *
 from net.vtranse_vgg import VTranse
 
-N_cls = cfg.VRD_NUM_CLASS
-N_rela = cfg.VRD_NUM_RELA
-N_each_batch = cfg.VRD_BATCH_NUM_RELA
-lr_init = cfg.VRD_LR_INIT
+N_cls = cfg.VG_NUM_CLASS
+N_rela = cfg.VG_NUM_RELA
+N_each_batch = cfg.VG_BATCH_NUM_RELA
+lr_init = cfg.VG_LR_INIT
 
 index_sp = False
 index_cls = False
@@ -18,8 +18,8 @@ index_cls = False
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
-roidb_path = cfg.DIR + 'vtranse/input/vrd_rela_roidb.npz'
-res_path = cfg.DIR + 'vtranse/pretrained_para/vrd_vgg_pretrained.ckpt'
+roidb_path = cfg.DIR + 'vtranse/input/vg_rela_roidb.npz'
+res_path = cfg.DIR + 'vtranse/pretrained_para/vg_vgg_pretrained.ckpt'
 
 roidb_read = read_roidb(roidb_path)
 train_roidb = roidb_read['train_roidb']
@@ -27,7 +27,7 @@ test_roidb = roidb_read['test_roidb']
 val_roidb = roidb_read['val_roidb']
 N_train = len(train_roidb)
 N_val = len(val_roidb)
-N_round = cfg.VRD_TRAIN_ROUND
+N_round = cfg.VG_TRAIN_ROUND
 N_show = 100
 N_save = N_train
 
@@ -70,7 +70,7 @@ with tf.Session() as sess:
 				rd_loss = 0.0
 				acc = 0.0
 			if t % N_save == 0: 
-				save_path = cfg.DIR + 'vtranse/pred_para/vrd_vgg_rela/vrd_vgg' + format(int(t/N_save),'04') + '.ckpt' 
+				save_path = cfg.DIR + 'vtranse/pred_para/vg_vgg_rela/vg_vgg' + format(int(t/N_save),'04') + '.ckpt' 
 				print("saving model to {0}".format(save_path))
 				saver.save(sess, save_path)
 				rd_loss_val = 0.0
