@@ -158,31 +158,6 @@ class VTranse(object):
 		self.layers['rela_score'] = rela_score
 		self.layers['rela_prob'] = rela_prob
 
-	def build_rd_network2(self):
-		net_conv = self.layers['head']
-		net_conv2 = conv(net_conv, 1, 1, 512, 1, 1, 'RD_conv', relu = True)
-		#sub_pool5 = self.layers['sub_pool5']
-		#ob_pool5 = self.layers['ob_pool5']
-		sub_pool5 = self.crop_pool_layer(net_conv2, self.sbox, "sub_pool6")
-		ob_pool5 = self.crop_pool_layer(net_conv2, self.obox, "ob_pool6")
-		n=tf.to_int32(self.sbox.shape[0])
-		sub_fc = tf.reshape(sub_pool5, shape=[n, -1])
-		ob_fc = tf.reshape(ob_pool5, shape=[n, -1])
-
-		flat = tf.concat([sub_fc, ob_fc], axis = 1)
-
-		fc1 = fc(flat, 4096, name='RD_fc1', relu = True)
-		fc1 = dropout(fc1, self.keep_prob)
-
-		fc2 = fc(fc1, 2048, name='RD_fc2', relu = True)
-		fc2 = dropout(fc2, self.keep_prob)
-
-		rela_score = fc(fc2, self.num_predicates, name='RD_fc3', relu = False)
-		rela_prob = tf.nn.softmax(rela_score)
-
-		self.layers['rela_score'] = rela_score
-		self.layers['rela_prob'] = rela_prob
-
 	def add_rd_loss(self):
 		rela_score = self.layers['rela_score']
 		rela_prob = self.layers['rela_prob']
