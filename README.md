@@ -1,7 +1,7 @@
 # vtranse
 visual translation embedding network for visual relation detection, CVPR 2017, tensorflow
 
-What's inside?
+1.What's inside?
 
 Detector network: Faster RCNN
 
@@ -10,7 +10,7 @@ The detail of the implementation can be found from https://github.com/endernewto
 Vtranse network (includes predicate detection, phrase detection and relationship detection)
 The detail of network can be found in CVPR2017 paper 'visual translation embedding network for visual relation detection, CVPR 2017, tensorflow'
 
-Download links
+2.Download links
 
 The data and pre-trained model can be downloaded from https://share.weiyun.com/5skGi9N. The files include:
 
@@ -20,13 +20,13 @@ The data and pre-trained model can be downloaded from https://share.weiyun.com/5
 
 3). The pretrained model of faster rcnn on vrd dataset(vrd_vgg_pretrained.ckpt) and vg dataset (vg_vgg_pretrained.ckpt)
 
-Setup
+3.Setup
 1). Download the pretrained detection model from https://share.weiyun.com/5skGi9N and put them into the folder 'vtranse/pretrained_para'. And put vrd_roidb and vg_roidb in the folder 'vtranse/input'
 2). Change the name 'DIR' in 'vtranse/model/cfg' file to suitable path.
 3). Run 'python train_file/train_vrd_vgg.py' (or in ipython:  'run train_file/train_vrd_vgg.py') to train vtranse network by vrd dataset.
 4). Run 'python test_file/test_vrd_vgg.py' (or in ipython:  'run test_file/test_vrd_vgg.py') and 'python test_file/eva_vrd_vgg_pred.py' to test and evaluate the result.
 
-Citation
+4.Citation
 
 If you're using this code in a scientific publication please cite:
 
@@ -36,3 +36,7 @@ If you're using this code in a scientific publication please cite:
   booktitle = {CVPR},
   year      = {2017},
 }
+
+5.Reference
+Vtrase Caffe type: https://github.com/zawlin/cvpr17_vtranse
+Faster rcnn source code: https://github.com/endernewton/tf-faster-rcnn
