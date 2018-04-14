@@ -5,7 +5,7 @@ visual translation embedding network for visual relation detection, CVPR 2017, t
 
 Detector network: Faster RCNN
 
-The detail of the implementation can be found from https://github.com/endernewton/tf-faster-rcnn, you can use the provided code in tf-faster-rcnn-master folder to train the detector network or download the trained model from https://share.weiyun.com/5skGi9N.
+The detail of the implementation can be found from https://github.com/endernewton/tf-faster-rcnn, you can use the provided code in tf-faster-rcnn-master folder to train the detector network or download the pretrained model from https://share.weiyun.com/5skGi9N (vrd_vgg_pretrained.ckpt for vrd dataset and vg_vgg_pretrained.ckptfor vg dataset).
 
 Vtranse network (includes predicate detection, phrase detection and relationship detection)
 The detail of network can be found in CVPR2017 paper 'visual translation embedding network for visual relation detection, CVPR 2017, tensorflow'
