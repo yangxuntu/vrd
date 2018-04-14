@@ -21,9 +21,13 @@ The data and pre-trained model can be downloaded from https://share.weiyun.com/5
 3). The pretrained model of faster rcnn on vrd dataset(vrd_vgg_pretrained.ckpt) and vg dataset (vg_vgg_pretrained.ckpt)
 
 3.Setup
+
 1). Download the pretrained detection model from https://share.weiyun.com/5skGi9N and put them into the folder 'vtranse/pretrained_para'. And put vrd_roidb and vg_roidb in the folder 'vtranse/input'
+
 2). Change the name 'DIR' in 'vtranse/model/cfg' file to suitable path.
+
 3). Run 'python train_file/train_vrd_vgg.py' (or in ipython:  'run train_file/train_vrd_vgg.py') to train vtranse network by vrd dataset.
+
 4). Run 'python test_file/test_vrd_vgg.py' (or in ipython:  'run test_file/test_vrd_vgg.py') and 'python test_file/eva_vrd_vgg_pred.py' to test and evaluate the result.
 
 4.Citation
