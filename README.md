@@ -1,11 +1,11 @@
-# vtranse
+# vtranse Tensorflow
 visual translation embedding network for visual relation detection, CVPR 2017, tensorflow
 
 1.What's inside?
 
 Detector network: Faster RCNN
 
-The detail of the implementation can be found from https://github.com/endernewton/tf-faster-rcnn, you can use the provided code in tf-faster-rcnn-master folder to train the detector network or download the pretrained model from https://share.weiyun.com/5skGi9N (vrd_vgg_pretrained.ckpt for vrd dataset and vg_vgg_pretrained.ckptfor vg dataset).
+The details of the implementation can be found from https://github.com/endernewton/tf-faster-rcnn, you can use the provided code in tf-faster-rcnn-master folder to train the detector network or download the pretrained model from https://share.weiyun.com/5skGi9N (vrd_vgg_pretrained.ckpt for vrd dataset and vg_vgg_pretrained.ckptfor vg dataset).
 
 Vtranse network (includes predicate detection, phrase detection and relationship detection)
 The detail of network can be found in CVPR2017 paper 'visual translation embedding network for visual relation detection, CVPR 2017, tensorflow'
@@ -27,10 +27,30 @@ The data and pre-trained model can be downloaded from https://share.weiyun.com/5
 2). Change the name 'DIR' in 'vtranse/model/cfg' file to suitable path.
 
 3). Run 'python train_file/train_vrd_vgg.py' (or in ipython:  'run train_file/train_vrd_vgg.py') to train vtranse network by vrd dataset.
+```bash
+python train_file/train_vrd_vgg.py
+```
 
 4). Run 'python test_file/test_vrd_vgg.py' (or in ipython:  'run test_file/test_vrd_vgg.py') and 'python test_file/eva_vrd_vgg_pred.py' to test and evaluate the result.
+```bash
+python test_file/test_vrd_vgg.py
+```
 
-4.Citation
+4. Training detection network by yourselves.
+
+If you want to pretrain a detector network by yourself, you can:
+
+1).Download raw data of VRD and VG from their offical web.
+
+2).Download faster rcnn code from https://github.com/endernewton/tf-faster-rcnn and substitute the files in folder 'tf-faster-rcnn-master/lib' and 'tf-faster-rcnn-master/model' to my code.
+
+3).Use the 'detector\vrd\vrd_process_dete.py' to generate the data 'vrd_roidb.npz' and put this source data into 'tf-faster-rcnn' folder.
+
+4).Put the provided code 'vtranse/detector/vrd/train_vrd_dete_vgg.py' into 'tf-faster-rcnn-master/tools' and run this code in the root path of tf-faster-rcnn as:
+```bash
+python tools/train_vrd_dete_vgg.py
+```
+5.Citation
 
 If you're using this code in a scientific publication please cite:
 
