@@ -14,7 +14,7 @@ The detail of network can be found in CVPR2017 paper 'visual translation embeddi
 
 The data and pre-trained model can be downloaded from https://share.weiyun.com/5skGi9N. The files include:
 
-1). The processed data of visual relationship dataset (vrd_roidb.npz), the ra data can be downloaded from https://cs.stanford.edu/people/ranjaykrishna/vrd/.
+1). The processed data of visual relationship dataset (vrd_roidb.npz), the raw data can be downloaded from https://cs.stanford.edu/people/ranjaykrishna/vrd/.
 
 2). The processed data of visual genome dataset (vg_roidb.npz), the raw data can be downloaded from https://visualgenome.org/.
 
@@ -77,7 +77,12 @@ If you're using this code in a scientific publication please cite:
   year      = {2017},
 }
 ```
-5.Reference
+7.Reference
 
-Vtrase Caffe type: https://github.com/zawlin/cvpr17_vtranse
-Faster rcnn source code: https://github.com/endernewton/tf-faster-rcnn
+1).Vtrase Caffe type: https://github.com/zawlin/cvpr17_vtranse
+
+2).Faster rcnn source code: https://github.com/endernewton/tf-faster-rcnn
+
+3).VRD dataset: https://cs.stanford.edu/people/ranjaykrishna/vrd/, https://drive.google.com/file/d/1BzP8DN2MAz76IvQTlpNOYla_bNC9gQuN/view
+
+4).VG dataset: https://visualgenome.org/ . The filtered type of VG dataset https://drive.google.com/file/d/1C6MDiqWQupMrPOgk4T12zWiAJAZmY1aa/view
