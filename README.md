@@ -30,12 +30,12 @@ The data and pre-trained model can be downloaded from https://share.weiyun.com/5
 ```bash
 python train_file/train_vrd_vgg.py
 ```
-
 4). Run 'python test_file/test_vrd_vgg.py' (or in ipython:  'run test_file/test_vrd_vgg.py') and 'python test_file/eva_vrd_vgg_pred.py' to test and evaluate the result.
 ```bash
 python test_file/test_vrd_vgg.py
 python test_file/eva_vrd_vgg_pred.py
 ```
+
 4. Training detection network by yourselves. If you do not want to train this network by yourself, you can download my pretrained file of faster-rcnn vrd dataset(vrd_vgg_pretrained.ckpt) and vg dataset (vg_vgg_pretrained.ckpt).
 
 If you want to pretrain a detector network by yourself, you can:
@@ -52,6 +52,7 @@ python tools/train_vrd_dete_vgg.py
 ```
 
 5.Train relationship detection by yousrself
+
 1).Put the pretrained model into the folder 'vtranse/pretrained_para'
 
 2).Use 'vtrnse\process\vrd_pred_process' to generate vrd_roidb.npz and put this file into 'vtranse\input'. If you do not want to generate this file, you can download them from the provided link. Notice that the provided 'vrd_roidb.npz' is used to train the relationship detection network and not used to train the detection network.
@@ -77,6 +78,7 @@ If you're using this code in a scientific publication please cite:
   year      = {2017},
 }
 ```
+
 7.Reference
 
 1).Vtrase Caffe type: https://github.com/zawlin/cvpr17_vtranse
