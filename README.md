@@ -20,9 +20,7 @@ git clone https://github.com/yangxuntu/vtranse.git
 pip install easydict
 ```
 
-# Training 
-## 1. Download dataset 
-1). VRD dataset
+# 1. Download dataset (VRD dataset is used as example)
 a). Download the dataset form https://share.weiyun.com/5skGi9N, and the file is named as 'sg_dataset.zip'. 
 
 b). Use the following commend to unzip the downloaded data:
@@ -56,6 +54,45 @@ run process/vrd_pred_process.py
 ```
 
 After runing this file, you will find that there is one 'vrd_roidb.npz' file in the foloder 'vtranse/input'
+
+# 2. Training
+a). Download pre-trained model of faster-rcnn on VRD dataset from https://share.weiyun.com/5skGi9N, and the file names are 'vrd_vgg_pretrained.ckpt.data-00000-of-00001', 'vrd_vgg_pretrained.ckpt.index', 'vrd_vgg_pretrained.ckpt.meta' and 'vrd_vgg_pretrained.ckpt.pkl'. After downloading them, using the following commend to move them into the 'vtranse/pre_trained' file:
+```bash
+mv vrd_vgg_pretrained.ckpt.data-00000-of-00001 vtranse/pretrained_para
+mv vrd_vgg_pretrained.ckpt.index vtranse/pretrained_para
+mv vrd_vgg_pretrained.ckpt.meta vtranse/pretrained_para
+mv vrd_vgg_pretrained.ckpt.pkl vtranse/pretrained_para
+```
+
+b). Create a folder which is used to save the trained results
+```bash
+mkdir -p ~vtranse/pred_para/vrd_vgg
+```
+
+c). After downloading and moving files to suitable folder, using 'vtranse/train_file/train_vrd_vgg.py' to train vtranse network on VRD dataset.
+```bash
+ipython
+run train_file/train_vrd_vgg.py
+```
+d). When training, you can see the results like that:
+```bash
+t: 100.0, rd_loss: 4.83309404731, acc: 0.0980000074953
+t: 200.0, rd_loss: 3.81237616211, acc: 0.263000019006
+t: 300.0, rd_loss: 3.51845422685, acc: 0.290333356783
+t: 400.0, rd_loss: 3.31810754955, acc: 0.292666691653
+t: 500.0, rd_loss: 3.48527273357, acc: 0.277666689083
+t: 600.0, rd_loss: 3.06100189149, acc: 0.340666691475
+t: 700.0, rd_loss: 3.02625158072, acc: 0.334666692317
+t: 800.0, rd_loss: 3.06034492403, acc: 0.330333357863
+t: 900.0, rd_loss: 3.16739703059, acc: 0.322666690871
+...
+```
+
+# 3. Testing
+
+
+
+
 
 
 
