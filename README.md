@@ -1,6 +1,24 @@
 # vtranse Tensorflow
 visual translation embedding network for visual relation detection, CVPR 2017, tensorflow
 
+#Installation
+1. Install ipython, if you do not have ipython, you can install this tool (strongly recommended: https://ipython.org/install.html)
+```bash
+pip install ipython
+```
+2. Install TensorFlow v1.3.0 or newer type.
+```bash
+pip install tensorflow-gpu==1.3.0
+```
+3.Download this repository or clone with Git
+```bash
+git clone https://github.com/yangxuntu/vtranse.git
+```
+
+#Training
+
+
+
 1.What's inside?
 
 Detector network: Faster RCNN
