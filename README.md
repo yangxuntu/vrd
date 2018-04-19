@@ -19,8 +19,8 @@ git clone https://github.com/yangxuntu/vtranse.git
 ```bash
 pip install easydict
 ```
-
-# 1. Download dataset (VRD dataset is used as example)
+# Training and Testing Vtranse
+## 1. Download dataset (VRD dataset is used as example)
 a). Download the dataset form https://share.weiyun.com/5skGi9N, and the file is named as 'sg_dataset.zip'. 
 
 b). Use the following commend to unzip the downloaded data:
@@ -55,7 +55,7 @@ run process/vrd_pred_process.py
 
 After runing this file, you will find that there is one 'vrd_roidb.npz' file in the foloder 'vtranse/input'
 
-# 2. Training
+## 2. Training
 a). Download pre-trained model of faster-rcnn on VRD dataset from https://share.weiyun.com/5skGi9N, and the file names are 'vrd_vgg_pretrained.ckpt.data-00000-of-00001', 'vrd_vgg_pretrained.ckpt.index', 'vrd_vgg_pretrained.ckpt.meta' and 'vrd_vgg_pretrained.ckpt.pkl'. After downloading them, using the following commend to move them into the 'vtranse/pre_trained' file:
 ```bash
 mv vrd_vgg_pretrained.ckpt.data-00000-of-00001 vtranse/pretrained_para
@@ -88,7 +88,7 @@ t: 900.0, rd_loss: 3.16739703059, acc: 0.322666690871
 ...
 ```
 
-# 3. Testing
+## 3. Testing
 a). After training vtranse, you will find files like 'vrd_vgg0001.ckpt' in the 'vtranse/pred_para/vrd_vgg' folder. And
  then you can test your trained model
  
@@ -111,3 +111,39 @@ ipython
 run test_file/eva_vrd_vgg_pred.py
 ```
 
+# VG dataset
+1). Download VG dataset.
+This dataset can be downloaded from their offical website: https://visualgenome.org/. After downloading these files, you should using the following commend to put these images into the folder 'dataset/VG/images/VG_100K'
+```bash
+mkdir -p ~dataset/VG/images/VG_100K
+mv images/VG100K dataset/VG/images/VG_100K
+mv images/VG100K dataset/VG/images/VG_100K
+```
+
+2). Download training/testing split
+Since this dataset is so noisy, and I use one filtered type which is provided by https://drive.google.com/file/d/1C6MDiqWQupMrPOgk4T12zWiAJAZmY1aa/view?usp=drive_web, you can download the split form this link.
+After downloading this file, you can use the following commend to pre-process the vg dataset
+
+```bash
+mkdir -p ~dataset/VG/imdb
+mv vg1_2_meta.h5 dataset/VG/imdb
+ipython
+run process/vg_pred_process.py
+```
+
+3). Training, Testing and Evaluation
+After pre-processing Vg dataset, you can using similar process like VRD dataset to train, test and evaluate your model by using following commends:
+```bash
+ipython
+run train_file/train_vg_vgg.py
+```
+
+```bash
+ipython
+run test_file/test_vg_vgg_pred.py
+```
+
+```bash
+ipython
+run test_file/eva_vg_vgg_pred.py
+```
