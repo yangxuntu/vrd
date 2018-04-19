@@ -21,7 +21,7 @@ pip install easydict
 ```
 
 # Training 
-## 1. Download dataset and preprocess the dataset
+## 1. Download dataset 
 1). VRD dataset
 a). Download the dataset form https://share.weiyun.com/5skGi9N, and the file is named as 'sg_dataset.zip'. 
 
@@ -45,6 +45,19 @@ mv sg_dataset/sg_train_images dataset/VRD/sg_dataset
 ```
 
 e). Change the root path in file 'vtranse/model/config.py': open this file and find the term '__C.DIR' which is named as '/home/yangxu/rd' to suitable path where you put this vtrase folder. 
+
+f). Pre-process the VRD dataset to the vrd_roidb.npz which can be used to train the network. Open ipython using following commend:
+```bash
+ipython
+```
+And then use following commend to pre-process data in vrd folder:
+```bash
+run process/vrd_pred_process.py
+```
+
+After runing this file, you will find that there is one 'vrd_roidb.npz' file in the foloder 'vtranse/input'
+
+
 
 1.What's inside?
 
