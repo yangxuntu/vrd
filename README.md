@@ -147,3 +147,27 @@ run test_file/test_vg_vgg_pred.py
 ipython
 run test_file/eva_vg_vgg_pred.py
 ```
+
+# Citation:
+
+```bash
+@inproceedings{Zhang_2017_CVPR,
+  author    = {Hanwang Zhang, Zawlin Kyaw, Shih-Fu Chang, Tat-Seng Chua},
+  title     = {Visual Translation Embedding Network for Visual Relation Detection},
+  booktitle = {CVPR},
+  year      = {2017},
+}
+```
+
+# References:
+1. VRD project:
+https://cs.stanford.edu/people/ranjaykrishna/vrd/
+
+2. Visual Genome
+https://visualgenome.org
+
+3. Vtranse Caffe Type:
+https://github.com/zawlin/cvpr17_vtranse
+
+4. The faster rcnn code which I used to train the detection part in this file:
+https://github.com/endernewton/tf-faster-rcnn
