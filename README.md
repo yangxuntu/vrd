@@ -171,3 +171,6 @@ https://github.com/zawlin/cvpr17_vtranse
 
 4. The faster rcnn code which I used to train the detection part in this file:
 https://github.com/endernewton/tf-faster-rcnn
+
+# Contact
+1. If you have any problems of this programming, you can eamil to s170018@e.ntu.edu.sg.
