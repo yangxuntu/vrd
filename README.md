@@ -1,7 +1,7 @@
 # vtranse Tensorflow
 visual translation embedding network for visual relation detection, CVPR 2017, tensorflow
 
-#Installation
+# Installation
 1. Install ipython, if you do not have ipython, you can install this tool (strongly recommended: https://ipython.org/install.html)
 ```bash
 pip install ipython
@@ -15,9 +15,36 @@ pip install tensorflow-gpu==1.3.0
 git clone https://github.com/yangxuntu/vtranse.git
 ```
 
-#Training
+3. Install easydict
+```bash
+pip install easydict
+```
 
+# Training 
+## 1. Download dataset and preprocess the dataset
+1). VRD dataset
+a). Download the dataset form https://share.weiyun.com/5skGi9N, and the file is named as 'sg_dataset.zip'. 
 
+b). Use the following commend to unzip the downloaded data:
+```bash
+unzip sg_dataset.zip -d sg_dataset
+```
+
+c).In the path where you put vtranse folder, use the following commend to make a new folder 'dataset/VRD':
+```bash
+mkdir -p ~/dataset/VRD/json_dataset
+mkdir -p ~/dataset/VRD/sg_dataset
+```
+
+d). Move the files in sg_dataset into the created dataset, by using the following commends:
+```bash
+mv sg_dataset/annotations_test.json dataset/VRD/json_dataset
+mv sg_dataset/annotations_train.json dataset/VRD/json_dataset
+mv sg_dataset/sg_test_images dataset/VRD/sg_dataset
+mv sg_dataset/sg_train_images dataset/VRD/sg_dataset
+```
+
+e). Change the root path in file 'vtranse/model/config.py': open this file and find the term '__C.DIR' which is named as '/home/yangxu/rd' to suitable path where you put this vtrase folder. 
 
 1.What's inside?
 
