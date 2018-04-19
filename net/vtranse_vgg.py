@@ -117,7 +117,7 @@ class VTranse(object):
 			y2 = tf.slice(rois, [0, 3], [-1, 1], name="y2") / height
 			# Won't be back-propagated to rois anyway, but to save time
 			bboxes = tf.stop_gradient(tf.concat([y1, x1, y2, x2], 1))
-			crops = tf.image.crop_and_resize(bottom, bboxes, tf.to_int32(batch_ids), [cfg.POOLING_SIZE*2, cfg.POOLING_SIZE*2],
+			crops = tf.image.crop_and_resize(bottom, bboxes, tf.to_int32(batch_ids), [cfg.POOLING_SIZE*2, cfg.POOLING_SIZE*2], method='bilinear',
 											 name="crops")
 			pooling = max_pool(crops, 2, 2, 2, 2, name="max_pooling")
 		return pooling
