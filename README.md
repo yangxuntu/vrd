@@ -89,5 +89,25 @@ t: 900.0, rd_loss: 3.16739703059, acc: 0.322666690871
 ```
 
 # 3. Testing
+a). After training vtranse, you will find files like 'vrd_vgg0001.ckpt' in the 'vtranse/pred_para/vrd_vgg' folder. And
+ then you can test your trained model
+ 
+b). Open the file 'vtranse/test_file/test_vrd_vgg_pred.py' and change the variable 'model_path' to the suitable pretrained model's name.
 
+c). Create a folder to save the result of detected relationships using the following commend:
+```bash
+mkdir -p ~vtranse/pred_res
+```
+
+d). After changing the name of your model, using following commend to get the relationship detection results:
+```bash
+ipython
+run test_file/test_vrd_vgg_pred.py
+```
+
+e). After testing, you can run the file 'vtranse/test_file/eva_vrd_vgg_pred.py' to evaluate your detected result:
+```bash
+ipython
+run test_file/eva_vrd_vgg_pred.py
+```
 
