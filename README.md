@@ -159,12 +159,11 @@ run test_file/eva_vg_vgg_pred.py
 }
 ```
 
-# Results
-|               | VRD           | VG    |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+# Results of VRD
+|               |  predicate    | phrase        | relation    |
+| ------------- |:-------------:| -------------:| -----------:|
+| published result        | 44.76      | 22.42   |15.20|
+| implemented result      | 46.48      |   24.32 |16.27|
 
 # References:
 1. VRD project:
