@@ -159,6 +159,13 @@ run test_file/eva_vg_vgg_pred.py
 }
 ```
 
+# Results
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 # References:
 1. VRD project:
 https://cs.stanford.edu/people/ranjaykrishna/vrd/
