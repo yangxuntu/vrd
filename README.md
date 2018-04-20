@@ -160,7 +160,7 @@ run test_file/eva_vg_vgg_pred.py
 ```
 
 # Results
-| Tables        | Are           | Cool  |
+|               | VRD           | VG    |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
