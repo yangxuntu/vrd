@@ -159,11 +159,18 @@ run test_file/eva_vg_vgg_pred.py
 }
 ```
 
-# Results of VRD
+# Results of VRD (R100)
 |               |  predicate    | phrase        | relation    |
 | ------------- |:-------------:| -------------:| -----------:|
 | published result        | 44.76      | 22.42   |15.20|
 | implemented result      | 46.48      |   24.32 |16.27|
+
+
+# Results of VG (R100)
+|               |  predicate    | phrase        | relation    |
+| ------------- |:-------------:| -------------:| -----------:|
+| published result        | 62.87      | 10.45   |6.04|
+| implemented result      | 61.70      | 13.62 |11.62|
 
 # References:
 1. VRD project:
