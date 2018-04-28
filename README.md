@@ -21,7 +21,7 @@ pip install easydict
 ```
 # Training and Testing Vtranse
 ## 1. Download dataset (VRD dataset is used as example)
-a). Download the dataset form https://share.weiyun.com/5skGi9N, and the file is named as 'sg_dataset.zip'. 
+a). Download the dataset form https://share.weiyun.com/55KK78Y, and the file is named as 'sg_dataset.zip'. 
 
 b). Use the following commend to unzip the downloaded data:
 ```bash
