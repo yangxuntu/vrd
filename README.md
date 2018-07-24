@@ -1,5 +1,6 @@
-# vtranse Tensorflow
+# vtranse/STA Tensorflow
 visual translation embedding network for visual relation detection, CVPR 2017, tensorflow
+Shuffle-Then-Assemble: Learning Object-Agnostic Visual Relationship Features, ECCV, tensorflow
 
 # Installation
 1. Install ipython, if you do not have ipython, you can install this tool (strongly recommended: https://ipython.org/install.html)
